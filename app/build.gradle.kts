@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.serialization)
     alias(libs.plugins.hilt.version)
+    alias(libs.plugins.room.version)
     alias(libs.plugins.ksp.version)
     alias(libs.plugins.kotlin.parcelize)
     // id("kotlin-kapt")
@@ -54,6 +55,9 @@ android {
     }
     hilt {
         enableAggregatingTask = true
+    }
+    room {
+        schemaDirectory("$projectDir/schemas")
     }
 }
 
