@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStoreFile
 import androidx.room.Room
+import com.food.store.FoodStoreApplication
 import com.food.store.common.Constants.FOOD_STORE_DB_NAME
 import com.food.store.common.Constants.FOOD_STORE_PREF_NAME
 import com.food.store.common.UserDataStore
@@ -41,7 +42,7 @@ object DataBaseModule {
 
     @Provides
     @Singleton
-    fun provideDataStorePreferences(application: Application): DataStore<Preferences> {
+    fun provideDataStorePreferences(application: FoodStoreApplication): DataStore<Preferences> {
         return PreferenceDataStoreFactory.create(
             produceFile = { application.preferencesDataStoreFile(FOOD_STORE_PREF_NAME) }
         )

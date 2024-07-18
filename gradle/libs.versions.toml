@@ -5,7 +5,7 @@ coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 coreVersion = "1.6.1"
-mockVersion = "1.13.11"
+mockVersion = "1.13.12"
 mockitoVersion = "5.12.0"
 mockitoKotlinVersion = "5.4.0"
 espressoCore = "3.6.1"
@@ -18,7 +18,7 @@ mockwebserver = "5.0.0-alpha.14"
 navigationCompose = "2.7.7"
 hiltDagger = "2.51.1"
 hiltCompose = "1.2.0"
-coilCompose = "2.6.0"
+coilCompose = "2.7.0"
 glideCompose = "4.16.0"
 retrofitVersions = "2.11.0"
 googleGson = "2.11.0"
@@ -35,6 +35,7 @@ pagingRuntime = "3.3.0"
 pagingCompose = "3.3.0"
 accompanistPermissions = "0.34.0"
 #ktlint = "10.3.0"
+uiVersion = "1.9.0"
 
 
 
@@ -59,7 +60,7 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui", version = "1.6.8" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref ="materialVersion" }
