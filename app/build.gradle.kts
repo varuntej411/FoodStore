@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.jetbrains.kotlin.compose)
     alias(libs.plugins.jetbrains.kotlin.serialization)
     alias(libs.plugins.hilt.version)
     alias(libs.plugins.room.version)
@@ -46,7 +47,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.4"
     }
     packaging {
         resources {
@@ -75,6 +76,7 @@ dependencies {
 
     //navigation compose
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
     //hilt dagger
     implementation(libs.androidx.hilt.android)
     ksp(libs.androidx.hilt.compiler)
@@ -102,6 +104,7 @@ dependencies {
     implementation(platform(libs.okhttp.bom))
 
     //coil image loader
+    implementation(libs.androidx.coil)
     implementation(libs.androidx.coil.compose)
     //Glide image loader
     implementation(libs.androidx.glider)
