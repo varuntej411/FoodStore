@@ -12,30 +12,29 @@ import kotlinx.coroutines.flow.Flow
 interface FoodStoreDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(note: ProductEntity): Long
+    suspend fun insertAll(productEntity: ProductEntity): Long
 
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun updateAll(note: ProductEntity)
+    suspend fun updateAll(productEntity: ProductEntity)
 
     @Delete
-    suspend fun deleteProducts(note: ProductEntity)
+    suspend fun deleteProducts(productEntity: ProductEntity)
 
     @Query("SELECT * FROM product_table")
     fun getAllProducts(): Flow<List<ProductEntity>>
 
-    @Query("SELECT * From product_table where id = :id")
+    @Query("SELECT * From product_table WHERE id = :id")
     suspend fun getProductById(id: String): ProductEntity
 
     @Query("SELECT * FROM product_table WHERE url=:url")
     suspend fun getProductByUrl(url: String): ProductEntity?
 
     @Query("SELECT *  FROM product_table ORDER BY price ASC")
-    fun getProductsSortASC(): Flow<List<ProductEntity>>
-
+    suspend fun getProductsSortASC(): Flow<List<ProductEntity>>
 
     @Query("SELECT * FROM product_table ORDER BY price DESC")
-    fun getProductsSortDSC(): Flow<List<ProductEntity>>
+    suspend fun getProductsSortDSC(): Flow<List<ProductEntity>>
 
     @Query("DELETE FROM product_table")
     suspend fun deleteAllArticles()
