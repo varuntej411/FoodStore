@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import com.food.store.ui.theme.FoodStoreTheme
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("DEPRECATION")
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

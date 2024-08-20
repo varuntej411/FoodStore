@@ -25,17 +25,17 @@ interface FoodStoreDao {
     fun getAllProducts(): Flow<List<ProductEntity>>
 
     @Query("SELECT * From product_table WHERE id = :id")
-    suspend fun getProductById(id: String): ProductEntity
+    fun getProductById(id: String): ProductEntity
 
     @Query("SELECT * FROM product_table WHERE url=:url")
-    suspend fun getProductByUrl(url: String): ProductEntity?
+    fun getProductByUrl(url: String): ProductEntity?
 
     @Query("SELECT *  FROM product_table ORDER BY price ASC")
-    suspend fun getProductsSortASC(): Flow<List<ProductEntity>>
+    fun getProductsSortASC(): Flow<List<ProductEntity>>
 
     @Query("SELECT * FROM product_table ORDER BY price DESC")
-    suspend fun getProductsSortDSC(): Flow<List<ProductEntity>>
+    fun getProductsSortDSC(): Flow<List<ProductEntity>>
 
     @Query("DELETE FROM product_table")
-    suspend fun deleteAllArticles()
+    fun deleteAllArticles()
 }
